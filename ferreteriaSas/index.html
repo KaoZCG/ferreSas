@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sas Shop eCommerce - Ferretería</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png" />
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="assets/img/favicon.ico"
+    />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/templatemo.css" />
+    <link rel="stylesheet" href="assets/css/custom.css" />
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css" />
+  </head>
+
+  <body>
+    <!-- Start Top Nav -->
+    <nav
+      class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block"
+      id="templatemo_nav_top"
+    >
+      <div class="container text-light">
+        <div class="w-100 d-flex justify-content-between">
+          <div>
+            <i class="fa fa-envelope mx-2"></i>
+            <a
+              class="navbar-sm-brand text-light text-decoration-none"
+              href="mailto:ce.gangas@duocuc.cl"
+              >ce.gangas@duocuc.cl</a
+            >
+            <i class="fa fa-phone mx-2"></i>
+            <a
+              class="navbar-sm-brand text-light text-decoration-none"
+              href="tel:942149351"
+              >(+56)9-42149351</a
+            >
+          </div>
+          <div>
+            <a
+              class="text-light"
+              href="https://github.com/kaoZCG/"
+              target="_blank"
+              rel="noopener"
+              ><i class="fab fa-github fa-sm fa-fw me-2"></i
+            ></a>
+            <a
+              class="text-light"
+              href="https://portafolio-izpp.onrender.com/"
+              target="_blank"
+              rel="noopener"
+              ><i class="fas fa-globe fa-sm fa-fw me-2"></i
+            ></a>
+            <a
+              class="text-light"
+              href="https://www.linkedin.com/in/cesar-gangas/"
+              target="_blank"
+              ><i class="fab fa-linkedin fa-sm fa-fw"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Close Top Nav -->
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a
+          class="navbar-brand text-success logo h1 align-self-center"
+          href="index.html"
+        >
+          Sas
+        </a>
+
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#templatemo_main_nav"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div
+          class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between"
+          id="templatemo_main_nav"
+        >
+          <div class="flex-fill">
+            <ul
+              class="nav navbar-nav d-flex justify-content-between mx-lg-auto"
+            >
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Sobre nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="shop.html">Tienda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contacto</a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar align-self-center d-flex">
+            <div
+              class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3"
+            >
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputMobileSearch"
+                  placeholder="Search ..."
+                />
+                <div class="input-group-text">
+                  <i class="fa fa-fw fa-search"></i>
+                </div>
+              </div>
+            </div>
+            <a
+              class="nav-icon d-none d-lg-inline"
+              href="#"
+              data-bs-toggle="modal"
+              data-bs-target="#templatemo_search"
+            >
+              <i class="fa fa-fw fa-search text-dark mr-2"></i>
+            </a>
+            <a class="nav-icon position-relative text-decoration-none" href="#">
+              <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+              <span
+                class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"
+                ><!-- Here goes the notification count--></span
+              >
+            </a>
+            <span id="user-greeting">
+              <!-- Aquí se mostrará el saludo al usuario si está logueado -->
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Close Header -->
+
+    <!-- Contenedor del carrito -->
+    <div id="cart-container" class="cart-overlay d-none">
+        <div class="cart-content p-4 shadow" style="background-color: #EFEFEF; border-radius: 8px;">
+            <button id="close-cart" class="btn btn-light border-0 position-absolute top-0 end-0 m-2" aria-label="Cerrar">
+                <i class="fa fa-times text-dark"></i>
+            </button>
+            <h4 class="text-dark title-gap">Tu carrito</h4>
+            <ul id="cart-items" class="list-unstyled">
+                <!-- Aquí se agregarán los productos dinámicamente -->
+            </ul>
+            <p id="empty-cart-message" class="text-center text-muted d-none">El carrito está vacío.</p>
+            <button id="checkout-button" class="btn btn-success w-100 mt-3">Finalizar compra</button>
+        </div>
+    </div>
+
+    <!-- Start Banner Hero -->
+    <div
+      id="template-mo-zay-hero-carousel"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <ol class="carousel-indicators">
+        <li
+          data-bs-target="#template-mo-zay-hero-carousel"
+          data-bs-slide-to="0"
+          class="active"
+        ></li>
+        <li
+          data-bs-target="#template-mo-zay-hero-carousel"
+          data-bs-slide-to="1"
+        ></li>
+        <li
+          data-bs-target="#template-mo-zay-hero-carousel"
+          data-bs-slide-to="2"
+        ></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="row p-5">
+              <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                <img
+                  class="img-fluid"
+                  src="./assets/img/banner_1_1.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-lg-6 mb-0 d-flex align-items-center">
+                <div class="text-align-left align-self-center">
+                  <h1 class="h1 text-success"><b>Sas</b> eCommerce</h1>
+                  <h3 class="h2">Tus herramientas favoritas se están aquí</h3>
+                  <p>
+                    Encuentra todo lo que necesitas para tus proyectos en un
+                    solo lugar. Desde herramientas manuales hasta eléctricas,
+                    ofrecemos calidad y variedad. Equípate con lo mejor para tus
+                    tareas de construcción, reparación o bricolaje. ¡Haz de tus
+                    proyectos una realidad con nuestras herramientas favoritas!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row p-5">
+              <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                <img
+                  class="img-fluid"
+                  src="./assets/img/banner_1_2.png"
+                  alt=""
+                />
+              </div>
+              <div class="col-lg-6 mb-0 d-flex align-items-center">
+                <div class="text-align-left">
+                  <h1 class="h1">¿Herramientas especificas?</h1>
+                  <h3 class="h2">Encuentra justo lo que necesitas</h3>
+                  <p>
+                    Contamos con una amplia variedad de herramientas
+                    especializadas para cada tarea. Desde proyectos de bricolaje
+                    hasta trabajos profesionales, tenemos lo que buscas. Calidad
+                    y precisión en cada herramienta, diseñadas para facilitar tu
+                    trabajo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row p-5">
+              <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                <img
+                  class="img-fluid"
+                  src="./assets/img/banner_img_03.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="col-lg-6 mb-0 d-flex align-items-center">
+                <div class="text-align-left">
+                  <h1 class="h1">Una gran variedad de productos</h1>
+                  <h3 class="h2">Dinos lo que necesitas</h3>
+                  <p>
+                    Contamos con una amplia selección de productos para cada
+                    necesidad. Desde herramientas básicas hasta equipos
+                    especializados, lo tenemos todo. Si no contamos con ellos,
+                    puedes contactarnos y haremos lo posible por conseguirlo.
+                    ¡Déjanos ayudarte a encontrar exactamente lo que buscas!.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev text-decoration-none w-auto ps-3"
+        href="#template-mo-zay-hero-carousel"
+        role="button"
+        data-bs-slide="prev"
+      >
+        <i class="fas fa-chevron-left"></i>
+      </a>
+      <a
+        class="carousel-control-next text-decoration-none w-auto pe-3"
+        href="#template-mo-zay-hero-carousel"
+        role="button"
+        data-bs-slide="next"
+      >
+        <i class="fas fa-chevron-right"></i>
+      </a>
+    </div>
+    <!-- End Banner Hero -->
+
+    <!-- Start Categories of The Month -->
+    <section class="container py-5">
+      <div class="row text-center pt-3">
+        <div class="col-lg-6 m-auto">
+          <h1 class="h1">Categorías del mes</h1>
+          <p>
+            Descubre nuestras categorías destacadas del mes. Encuentra productos
+            únicos y esenciales para tus proyectos. ¡Explora y elige lo mejor
+            para ti!
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-md-4 p-5 mt-3">
+          <a href="#"
+            ><img
+              src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/sodimacCL/10685_01/w=800,h=800,fit=pad"
+              class="rounded-circle img-fluid border"
+              style="width: 350px; max-height: 320px"
+          /></a>
+          <h5 class="text-center mt-3 mb-3">Herramientas</h5>
+          <p class="text-center">
+            <a class="btn btn-success">Ir a la tienda</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-4 p-5 mt-3">
+          <a href="#"
+            ><img
+              src="https://www.miferreteria.cl/wp-content/uploads/2022/07/cadena-eslabon-corto.jpg"
+              class="rounded-circle img-fluid border"
+              style="width: 350px; max-height: 320px;, content-fit: hide"
+          /></a>
+          <h2 class="h5 text-center mt-3 mb-3">Accesorios</h2>
+          <p class="text-center">
+            <a class="btn btn-success">Ir a la tienda</a>
+          </p>
+        </div>
+        <div class="col-12 col-md-4 p-5 mt-3">
+          <a href="#"
+            ><img
+              src="https://cdnx.jumpseller.com/ferroelectronic/image/45917223/resize/540/600?1709063281"
+              class="rounded-circle img-fluid border"
+              style="width: 350px; max-height: 320px"
+          /></a>
+          <h2 class="h5 text-center mt-3 mb-3">Jardinería</h2>
+          <p class="text-center">
+            <a class="btn btn-success">Ir a la tienda</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- End Categories of The Month -->
+
+    <!-- Start Featured Product -->
+    <section class="bg-light">
+      <div class="container py-5">
+        <div class="row text-center py-3">
+          <div class="col-lg-6 m-auto">
+            <h1 class="h1">Últimos productos agregados</h1>
+            <p>
+              Descubre los últimos productos añadidos a nuestra tienda. Siempre
+              estamos actualizando nuestro catálogo para ofrecerte lo mejor. ¡No
+              te pierdas las novedades y encuentra justo lo que necesitas!
+            </p>
+          </div>
+        </div>
+        <div class="row" id="last-product"></div>
+      </div>
+    </section>
+    <!-- End Featured Product -->
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 pt-5">
+            <h2 class="h2 text-success border-bottom pb-3 border-light logo">
+              Sas shop
+            </h2>
+            <ul class="list-unstyled text-light footer-link-list">
+              <li>
+                <i class="fas fa-map-marker-alt fa-fw"></i>
+                Calle siempreviva 742, Springfield, USA
+              </li>
+              <li>
+                <i class="fa fa-phone fa-fw"></i>
+                <a class="text-decoration-none" href="tel:942149351"
+                  >(+56)9-42149351</a
+                >
+              </li>
+              <li>
+                <i class="fa fa-envelope fa-fw"></i>
+                <a
+                  class="text-decoration-none"
+                  href="mailto:ce.gangas@duocuc.cl"
+                  >ce.gangas@duocuc.cl</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 pt-5">
+            <h2 class="h2 text-light border-bottom pb-3 border-light">
+              Productos
+            </h2>
+            <ul class="list-unstyled text-light footer-link-list">
+              <li><a class="text-decoration-none" href="#">Accesorios</a></li>
+              <li>
+                <a class="text-decoration-none" href="#">Herramientas</a>
+              </li>
+              <li>
+                <a class="text-decoration-none" href="#"
+                  >Herramientas eléctricas</a
+                >
+              </li>
+              <li><a class="text-decoration-none" href="#">Jardinería</a></li>
+              <li><a class="text-decoration-none" href="#">Medición</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-4 pt-5">
+            <h2 class="h2 text-light border-bottom pb-3 border-light">
+              Further Info
+            </h2>
+            <ul class="list-unstyled text-light footer-link-list">
+              <li><a class="text-decoration-none" href="#">Home</a></li>
+              <li><a class="text-decoration-none" href="#">About Us</a></li>
+              <li>
+                <a class="text-decoration-none" href="#">Shop Locations</a>
+              </li>
+              <li><a class="text-decoration-none" href="#">FAQs</a></li>
+              <li><a class="text-decoration-none" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row text-light mb-4">
+          <div class="col-12 mb-3">
+            <div class="w-100 my-3 border-top border-light"></div>
+          </div>
+          <div class="col-auto me-auto">
+            <ul class="list-inline text-left footer-icons">
+              <li
+                class="list-inline-item border border-light rounded-circle text-center"
+              >
+                <a
+                  class="text-light text-decoration-none"
+                  target="_blank"
+                  href="https://github.com/KaoZCG"
+                  ><i class="fab fa-github fa-lg fa-fw"></i
+                ></a>
+              </li>
+              <li
+                class="list-inline-item border border-light rounded-circle text-center"
+              >
+                <a
+                  class="text-light text-decoration-none"
+                  target="_blank"
+                  href="https://portafolio-izpp.onrender.com/"
+                  ><i class="fas fa-globe fa-lg fa-fw"></i
+                ></a>
+              </li>
+              <li
+                class="list-inline-item border border-light rounded-circle text-center"
+              >
+                <a
+                  class="text-light text-decoration-none"
+                  target="_blank"
+                  href="https://www.linkedin.com/in/cesar-gangas/"
+                  ><i class="fab fa-linkedin fa-lg fa-fw"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-auto">
+            <label class="sr-only" for="subscribeEmail"
+              >Correo electrónico</label
+            >
+            <div class="input-group mb-2">
+              <input
+                type="text"
+                class="form-control bg-dark border-light"
+                id="subscribeEmail"
+                placeholder="Correo electrónico"
+              />
+              <div class="input-group-text btn-success text-light">
+                Subscribete
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-100 bg-black py-3">
+        <div class="container">
+          <div class="row pt-2">
+            <div class="col-12">
+              <p class="text-left text-light">
+                Copyright &copy; 2025 Sas shop | César Gangas | Todos los
+                derechos reservados
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/templatemo.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <!-- End Script -->
+  </body>
+</html>
