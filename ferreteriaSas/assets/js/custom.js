@@ -9,7 +9,7 @@ let allProducts = []; // Variable global para almacenar todos los productos
 // Función para listar todos los productos
 let productList = async (containerId, filterCategory = null) => {
     try {
-        const petition = await fetch("http://localhost:8080/product", {
+        const petition = await fetch("http://localhost:8081/product", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -81,7 +81,7 @@ let productList = async (containerId, filterCategory = null) => {
 // Función para listar los últimos 3 productos
 let lastProduct = async (containerId) => {
     try {
-        const petition = await fetch("http://localhost:8080/product", {
+        const petition = await fetch("http://localhost:8081/product", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -146,7 +146,7 @@ let lastProduct = async (containerId) => {
 // Función para manejar el clic en una tarjeta
 const handleCardClick = async (productId) => {
     try {
-        const response = await fetch(`http://localhost:8080/product/${productId}`, {
+        const response = await fetch(`http://localhost:8081/product/${productId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -170,7 +170,7 @@ const handleCardClick = async (productId) => {
 
 const fetchProductDetails = async (productId) => {
     try {
-        const response = await fetch(`http://localhost:8080/product/${productId}`, {
+        const response = await fetch(`http://localhost:8081/product/${productId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -347,7 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
             const message = document.getElementById('registerMessage');
             try {
-                const response = await fetch('http://localhost:8080/api/users/register', {
+                const response = await fetch('http://localhost:8081/api/users/register', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(formData)
@@ -377,7 +377,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const password = document.getElementById('password').value;
             const message = document.getElementById('loginMessage');
             try {
-                const response = await fetch('http://localhost:8080/api/users/login', {
+                const response = await fetch('http://localhost:8081/api/users/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ email, password })
@@ -455,7 +455,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try {
                 // Envía el monto al backend
-                const response = await fetch("http://localhost:8080/api/webpay-rest/create", {
+                const response = await fetch("http://localhost:8081/api/webpay-rest/create", {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: `amount=${total}`
